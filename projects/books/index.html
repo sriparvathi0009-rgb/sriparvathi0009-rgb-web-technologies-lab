@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Books API - Lab Exercise 10</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- jQuery Library (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="brand">
+                <span class="icon">📚</span>
+                <h1>jQuery AJAX Books Explorer</h1>
+            </div>
+            <a href="../../projects.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Controls card -->
+        <div class="control-card">
+            <h2>Exercise 10: Fetching Data using jQuery <code>$.ajax()</code></h2>
+            <p class="desc">
+                When the <strong>"Load Books"</strong> button is clicked, an Ajax GET request is made using jQuery's 
+                <code>$.ajax()</code> method to retrieve a list of books from a hypothetical API endpoint 
+                (<code>https://api.example.com/books</code>). The JSON response is parsed, and titles, authors, and metadata are rendered dynamically.
+            </p>
+
+            <div class="api-config-box">
+                <label for="endpointInput">Hypothetical API Endpoint:</label>
+                <div class="input-row">
+                    <input type="text" id="endpointInput" value="https://api.example.com/books" readonly>
+                    <button id="loadBooksBtn" class="btn btn-primary">
+                        <span class="btn-text">Load Books</span>
+                        <span class="spinner" style="display:none;"></span>
+                    </button>
+                    <button id="clearBooksBtn" class="btn btn-secondary">Clear</button>
+                </div>
+            </div>
+
+            <!-- Filter Row -->
+            <div id="filterControls" class="filter-row" style="display:none;">
+                <input type="text" id="filterInput" placeholder="Filter fetched books by title or author...">
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Status / Alert Area -->
+        <div id="statusMessage" class="status-alert" style="display:none;"></div>
+
+        <!-- Books Grid Container -->
+        <div id="booksGrid" class="books-grid">
+            <div class="empty-state">
+                <span class="empty-icon">📖</span>
+                <h3>No Books Loaded Yet</h3>
+                <p>Click the <strong>"Load Books"</strong> button above to initiate jQuery's <code>$.ajax()</code> call.</p>
+            </div>
+        </div>
+
+        <!-- jQuery Code Snippet Reference -->
+        <div class="code-snippet-card">
+            <div class="code-header" id="toggleCodeBtn">
+                <span>💻 View Under-the-Hood jQuery $.ajax() Implementation</span>
+                <span id="codeToggleIcon">▼</span>
+            </div>
+            <pre id="codeBlock" style="display:none;"><code>$.ajax({
+    url: "https://api.example.com/books", // Or local JSON mock
+    type: "GET",
+    dataType: "json",
+    beforeSend: function() {
+        $('#loadBooksBtn .spinner').show();
+    },
+    success: function(data) {
+        // Parse JSON response and display books on the webpage
+        renderBooks(data);
+    },
+    error: function(xhr, status, error) {
+        console.error("AJAX Error: " + status, error);
+    },
+    complete: function() {
+        $('#loadBooksBtn .spinner').hide();
+    }
+});</code></pre>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 jQuery AJAX Book Catalog | CSCA 514 Lab Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

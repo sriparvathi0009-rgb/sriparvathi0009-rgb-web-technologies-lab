@@ -1,0 +1,137 @@
+{
+  "cities": {
+    "Puducherry": {
+      "city": "Puducherry",
+      "country": "IN",
+      "temperature": 29.5,
+      "feels_like": 33.2,
+      "temp_min": 26.0,
+      "temp_max": 32.0,
+      "humidity": 78,
+      "pressure": 1011,
+      "wind_speed": 4.6,
+      "condition": "Partly Cloudy",
+      "icon": "⛅",
+      "air_quality": "Moderate (AQI 68)",
+      "forecast": [
+        {"day": "Tomorrow", "temp": 30, "condition": "Sunny", "icon": "☀️"},
+        {"day": "Friday", "temp": 28, "condition": "Scattered Showers", "icon": "🌦️"},
+        {"day": "Saturday", "temp": 27, "condition": "Thunderstorms", "icon": "⛈️"}
+      ]
+    },
+    "Kannur": {
+      "city": "Kannur",
+      "country": "IN",
+      "temperature": 28.0,
+      "feels_like": 31.5,
+      "temp_min": 25.0,
+      "temp_max": 30.5,
+      "humidity": 82,
+      "pressure": 1012,
+      "wind_speed": 3.8,
+      "condition": "Tropical Breeze & Cloud",
+      "icon": "🌤️",
+      "air_quality": "Good (AQI 35)",
+      "forecast": [
+        {"day": "Tomorrow", "temp": 29, "condition": "Partly Cloudy", "icon": "⛅"},
+        {"day": "Friday", "temp": 27, "condition": "Light Rain", "icon": "🌧️"},
+        {"day": "Saturday", "temp": 28, "condition": "Humid & Sunny", "icon": "🌤️"}
+      ]
+    },
+    "Chennai": {
+      "city": "Chennai",
+      "country": "IN",
+      "temperature": 32.0,
+      "feels_like": 37.0,
+      "temp_min": 27.5,
+      "temp_max": 34.0,
+      "humidity": 72,
+      "pressure": 1009,
+      "wind_speed": 5.2,
+      "condition": "Sunny & Hazy",
+      "icon": "☀️",
+      "air_quality": "Unhealthy (AQI 115)",
+      "forecast": [
+        {"day": "Tomorrow", "temp": 33, "condition": "Clear Sky", "icon": "☀️"},
+        {"day": "Friday", "temp": 32, "condition": "Hot & Humid", "icon": "🌤️"},
+        {"day": "Saturday", "temp": 31, "condition": "Passing Showers", "icon": "🌦️"}
+      ]
+    },
+    "Bengaluru": {
+      "city": "Bengaluru",
+      "country": "IN",
+      "temperature": 23.5,
+      "feels_like": 23.5,
+      "temp_min": 19.0,
+      "temp_max": 26.0,
+      "humidity": 65,
+      "pressure": 1015,
+      "wind_speed": 4.1,
+      "condition": "Pleasant & Breezy",
+      "icon": "🍃",
+      "air_quality": "Good (AQI 42)",
+      "forecast": [
+        {"day": "Tomorrow", "temp": 24, "condition": "Mild Sunshine", "icon": "🌤️"},
+        {"day": "Friday", "temp": 23, "condition": "Cloudy Evening", "icon": "☁️"},
+        {"day": "Saturday", "temp": 22, "condition": "Light Drizzle", "icon": "🌧️"}
+      ]
+    },
+    "London": {
+      "city": "London",
+      "country": "UK",
+      "temperature": 14.0,
+      "feels_like": 12.8,
+      "temp_min": 10.0,
+      "temp_max": 16.0,
+      "humidity": 80,
+      "pressure": 1018,
+      "wind_speed": 6.7,
+      "condition": "Overcast & Drizzle",
+      "icon": "🌧️",
+      "air_quality": "Good (AQI 28)",
+      "forecast": [
+        {"day": "Tomorrow", "temp": 13, "condition": "Foggy", "icon": "🌫️"},
+        {"day": "Friday", "temp": 15, "condition": "Overcast", "icon": "☁️"},
+        {"day": "Saturday", "temp": 16, "condition": "Brief Sun", "icon": "⛅"}
+      ]
+    },
+    "New York": {
+      "city": "New York",
+      "country": "US",
+      "temperature": 18.2,
+      "feels_like": 17.5,
+      "temp_min": 13.0,
+      "temp_max": 20.0,
+      "humidity": 55,
+      "pressure": 1020,
+      "wind_speed": 5.8,
+      "condition": "Clear Blue Skies",
+      "icon": "☀️",
+      "air_quality": "Moderate (AQI 55)",
+      "forecast": [
+        {"day": "Tomorrow", "temp": 19, "condition": "Sunny", "icon": "☀️"},
+        {"day": "Friday", "temp": 17, "condition": "Breezy", "icon": "🍃"},
+        {"day": "Saturday", "temp": 15, "condition": "Rain", "icon": "🌧️"}
+      ]
+    },
+    "Tokyo": {
+      "city": "Tokyo",
+      "country": "JP",
+      "temperature": 21.0,
+      "feels_like": 20.5,
+      "temp_min": 16.0,
+      "temp_max": 23.0,
+      "humidity": 60,
+      "pressure": 1016,
+      "wind_speed": 3.5,
+      "condition": "Mild & Clear",
+      "icon": "🌸",
+      "air_quality": "Excellent (AQI 22)",
+      "forecast": [
+        {"day": "Tomorrow", "temp": 22, "condition": "Sunny", "icon": "☀️"},
+        {"day": "Friday", "temp": 20, "condition": "Cloudy", "icon": "☁️"},
+        {"day": "Saturday", "temp": 21, "condition": "Sunny Intervals", "icon": "🌤️"}
+      ]
+    }
+  }
+}

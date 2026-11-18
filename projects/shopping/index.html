@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPAL-AURA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>OPAL_AURA - Beauty & Cosmetics</h1>
+
+    <nav>
+
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Cart (<span id="cart-count">0</span>)</a>
+
+    </nav>
+
+</header>
+
+<section class="controls">
+
+    <input type="text"
+           id="search"
+           placeholder="Search Product...">
+
+    <select id="sort">
+
+        <option value="default">Sort By</option>
+
+        <option value="low-high">
+            Price : Low to High
+        </option>
+
+        <option value="high-low">
+            Price : High to Low
+        </option>
+
+        <option value="name">
+            Name A-Z
+        </option>
+
+    </select>
+
+</section>
+
+<section id="products">
+
+</section>
+
+<section id="cart">
+
+<h2>Shopping Cart</h2>
+
+<div id="cart-items">
+
+No products added.
+
+</div>
+
+<h3>
+
+Total :
+₹<span id="total">0</span>
+
+</h3>
+
+<button id="place-order">
+
+Place Order
+
+</button>
+
+<button id="cancel-order">
+
+Cancel Order
+
+</button>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science - Pondicherry University</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <span class="uni-logo">🎓</span>
+                <div>
+                    <h2>Department of Computer Science</h2>
+                    <p>Pondicherry University</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#home" class="nav-link active" onclick="showTab('home')">Home</a>
+                <a href="#about" class="nav-link" onclick="showTab('about')">About Us</a>
+                <a href="#login" class="nav-link" id="navLoginBtn" onclick="showTab('login')">Login</a>
+                <a href="#register" class="nav-link" id="navRegBtn" onclick="showTab('register')">Register</a>
+                <a href="../../projects.html" class="portfolio-back">← Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- User Banner (when logged in) -->
+    <div id="userBanner" class="user-banner" style="display:none;">
+        <span>Welcome, <strong id="loggedInName">Student</strong>! (<span id="userRoleBadge">Student</span>)</span>
+        <button class="btn btn-outline-white btn-xs" onclick="logoutUser()">Logout</button>
+    </div>
+
+    <main class="container">
+
+        <!-- TAB: HOME -->
+        <section id="tab-home" class="tab-content active">
+            <div class="hero-dept">
+                <div class="hero-info">
+                    <span class="badge">Centre of Academic Excellence</span>
+                    <h1>Empowering Minds in Computing & Research</h1>
+                    <p>Offering MCA, M.Tech, and Ph.D programs designed to provide rigorous training in software development, AI, network security, and data analytics.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="showTab('register')">Register for Portal</button>
+                        <button class="btn btn-secondary" onclick="showTab('about')">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <h3>500+</h3>
+                        <p>Alumni Worldwide</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>18+</h3>
+                        <p>Faculty & Researchers</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>5</h3>
+                        <p>Modern Lab Facilities</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Placement Support</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dept-programs">
+                <h2>Our Academic Programs</h2>
+                <div class="program-grid">
+                    <div class="program-card">
+                        <span class="p-icon">💻</span>
+                        <h3>MCA (Computer Science)</h3>
+                        <p>2-Year Professional Master's Program focused on software architecture, advanced web tech, and industry skills.</p>
+                    </div>
+                    <div class="program-card">
+                        <span class="p-icon">🤖</span>
+                        <h3>M.Tech (Network & Info Security)</h3>
+                        <p>Deep-dive research into cybersecurity, network resilience, cryptography, and artificial intelligence.</p>
+                    </div>
+                    <div class="program-card">
+                        <span class="p-icon">🔬</span>
+                        <h3>Ph.D in Computer Science</h3>
+                        <p>Premier doctoral research program tackling forefront problems in computing and machine intelligence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: ABOUT US -->
+        <section id="tab-about" class="tab-content">
+            <div class="about-section">
+                <h2>About The Department</h2>
+                <p class="lead">Established with a vision to nurture future leaders and innovators in computing sciences.</p>
+
+                <div class="vision-mission-grid">
+                    <div class="vm-card">
+                        <h3>🎯 Our Vision</h3>
+                        <p>To be recognized globally for cutting-edge education, impactful research, and producing socially responsible software engineers and scientists.</p>
+                    </div>
+                    <div class="vm-card">
+                        <h3>🚀 Our Mission</h3>
+                        <p>To provide high-quality education through modern curricula, foster innovative research environments, and collaborate closely with IT industry leaders.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 35px; color:#334a2f;">Department Facilities</h3>
+                <ul class="facilities-list">
+                    <li>⚡ <strong>CSCA Lab:</strong> Internet & Web Technologies Laboratory</li>
+                    <li>⚡ <strong>AI & Data Science Lab:</strong> High-performance GPU computing cluster</li>
+                    <li>⚡ <strong>Network & IoT Lab:</strong> Cisco networking racks and embedded devices</li>
+                    <li>⚡ <strong>Department Library:</strong> Extensive technical journals, IEEE access, and e-books</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TAB: LOGIN -->
+        <section id="tab-login" class="tab-content">
+            <div class="auth-card">
+                <h2>Department Portal Login</h2>
+                <p class="subtitle">Access your student or faculty dashboard</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email / Username</label>
+                        <input type="text" id="loginEmail" placeholder="e.g. parvathi@dept.edu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginRole">Account Type</label>
+                        <select id="loginRole">
+                            <option value="Student">Student</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="Admin">Administrator</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    <p class="form-footer">Don't have an account? <a href="#register" onclick="showTab('register')">Register here</a></p>
+                </form>
+                <div id="loginStatus" class="status-msg"></div>
+            </div>
+        </section>
+
+        <!-- TAB: REGISTER -->
+        <section id="tab-register" class="tab-content">
+            <div class="auth-card">
+                <h2>Student / Faculty Registration</h2>
+                <p class="subtitle">Join the Department of Computer Science Portal</p>
+
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="regName">Full Name *</label>
+                        <input type="text" id="regName" placeholder="Sri Parvathi P P" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Email Address *</label>
+                        <input type="email" id="regEmail" placeholder="parvathi@dept.edu" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="regRoll">Roll / Reg Number *</label>
+                            <input type="text" id="regRoll" placeholder="24MCA001" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regRole">Role *</label>
+                            <select id="regRole" required>
+                                <option value="Student">Student</option>
+                                <option value="Faculty">Faculty</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="regPass">Password *</label>
+                            <input type="password" id="regPass" placeholder="••••••••" required minlength="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="regConfirmPass">Confirm Password *</label>
+                            <input type="password" id="regConfirmPass" placeholder="••••••••" required minlength="4">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Complete Registration</button>
+                    <p class="form-footer">Already registered? <a href="#login" onclick="showTab('login')">Sign In</a></p>
+                </form>
+                <div id="regStatus" class="status-msg"></div>
+            </div>
+        </section>
+
+        <!-- TAB: DASHBOARD (When Logged in) -->
+        <section id="tab-dashboard" class="tab-content">
+            <div class="dash-card">
+                <h2>Student / Faculty Dashboard</h2>
+                <div id="profileSummary" class="profile-box"></div>
+
+                <h3 style="margin-top: 25px; margin-bottom: 12px; color: #334a2f;">Registered Department Members</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Roll/ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Registered Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registeredUsersTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Department of Computer Science | Pondicherry University</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

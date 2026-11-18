@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management Application - Lab Exercise 8</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="icon">📇</span>
+                <h1>Contact Manager Pro</h1>
+            </div>
+            <a href="../../projects.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Controls & Add Contact Button -->
+        <div class="top-bar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search contacts by name, email, or company...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <button id="openAddModalBtn" class="btn btn-primary">+ Add New Contact</button>
+        </div>
+
+        <!-- Contact List Container -->
+        <div class="card">
+            <div class="card-header">
+                <h2>All Contacts (<span id="contactCount">0</span>)</h2>
+                <div class="stats-badge">phpMyAdmin Database: <code>contacts_db.contacts</code></div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contact Name</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Category</th>
+                            <th>Company / Note</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ADD / EDIT MODAL -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Contact</h3>
+                <span id="closeModalBtn" class="close-btn">&times;</span>
+            </div>
+            <form id="contactForm">
+                <input type="hidden" id="editContactId">
+
+                <div class="form-group">
+                    <label for="contactName">Full Name *</label>
+                    <input type="text" id="contactName" placeholder="e.g. Ramesh Varma" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactEmail">Email *</label>
+                        <input type="email" id="contactEmail" placeholder="ramesh@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number *</label>
+                        <input type="tel" id="contactPhone" placeholder="+91 9876543210" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactCategory">Category</label>
+                        <select id="contactCategory">
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="College">College / Academic</option>
+                            <option value="Emergency">Emergency</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactCompany">Company / Relation</label>
+                        <input type="text" id="contactCompany" placeholder="e.g. Infosys / Classmate">
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="saveContactBtn">Save Contact</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Contact Management System | MCA Internet & Web Tech Lab</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

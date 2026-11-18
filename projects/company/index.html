@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora Technologies - Corporate Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="brand">
+                <span class="brand-logo">🏢</span>
+                <div>
+                    <h2>Nexora Technologies</h2>
+                    <p>Enterprise Management Portal</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#home" class="nav-link active" onclick="showView('home')">Home</a>
+                <a href="#login" class="nav-link" id="navLoginBtn" onclick="showView('login')">Portal Login</a>
+                <a href="#register" class="nav-link" id="navRegBtn" onclick="showView('register')">Register</a>
+                <a href="../../projects.html" class="portfolio-back">← Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Active User Bar -->
+    <div id="authBar" class="auth-bar" style="display:none;">
+        <div>
+            Logged in as: <strong id="currentUserName">User</strong> 
+            <span id="currentUserRole" class="badge-role">Employee</span>
+        </div>
+        <div class="auth-bar-actions">
+            <button class="btn btn-sm btn-light" onclick="showView('dashboard')">View Portal</button>
+            <button class="btn btn-sm btn-danger" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- VIEW: HOME -->
+        <section id="view-home" class="view-panel active">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="pill">Next-Gen Enterprise Solutions</span>
+                    <h1>Bridging Technology & Human Capital</h1>
+                    <p>Nexora Technologies delivers scalable cloud services, enterprise AI platforms, and seamless workforce governance.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="showView('login')">Employee & Admin Login</button>
+                        <button class="btn btn-outline" onclick="showView('register')">Register Account</button>
+                    </div>
+                </div>
+                <div class="quick-credentials">
+                    <div class="cred-card">
+                        <h4>Demo Credentials:</h4>
+                        <p><strong>Admin Login:</strong><br>Email: <code>admin@nexora.com</code><br>Password: <code>admin123</code><br><em>(Views all Employee details)</em></p>
+                        <hr style="margin: 8px 0; border: none; border-top: 1px solid #ddd;">
+                        <p><strong>Employee Login:</strong><br>Email: <code>rahul@nexora.com</code><br>Password: <code>emp123</code><br><em>(Views all Admin details)</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="grid-3">
+                <div class="feature-box">
+                    <span class="feat-icon">🔐</span>
+                    <h3>Role-Based Authentication</h3>
+                    <p>Strict access control with specific view permissions for Employee and Admin roles as per assignment criteria.</p>
+                </div>
+                <div class="feature-box">
+                    <span class="feat-icon">📊</span>
+                    <h3>phpMyAdmin / Database Integration</h3>
+                    <p>Designed with PHP & MySQL table architectures for enterprise credential verification and data storage.</p>
+                </div>
+                <div class="feature-box">
+                    <span class="feat-icon">⚡</span>
+                    <h3>Real-time Portal Updates</h3>
+                    <p>Add new employees or administrators on the fly and verify cross-view permissions instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: LOGIN -->
+        <section id="view-login" class="view-panel">
+            <div class="auth-wrapper">
+                <div class="auth-box">
+                    <h2>Company Portal Login</h2>
+                    <p class="subtitle">Authenticate with your employee or admin account</p>
+
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Company Email</label>
+                            <input type="email" id="loginEmail" placeholder="e.g. admin@nexora.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginRole">Select Login Role</label>
+                            <select id="loginRole" required>
+                                <option value="Admin">Administrator</option>
+                                <option value="Employee">Employee</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Authenticate</button>
+                        <p class="auth-helper">New member? <a href="#register" onclick="showView('register')">Register here</a></p>
+                    </form>
+                    <div id="loginFeedback" class="feedback-msg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: REGISTER -->
+        <section id="view-register" class="view-panel">
+            <div class="auth-wrapper">
+                <div class="auth-box">
+                    <h2>Company Registration</h2>
+                    <p class="subtitle">Create Employee or Administrator Account</p>
+
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="regName">Full Name *</label>
+                            <input type="text" id="regName" placeholder="e.g. Anita Roy" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="regEmail">Company Email *</label>
+                            <input type="email" id="regEmail" placeholder="anita@nexora.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="regRole">Account Role *</label>
+                                <select id="regRole" required>
+                                    <option value="Employee">Employee</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="regDept">Department *</label>
+                                <select id="regDept" required>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Operations">Operations</option>
+                                    <option value="Executive">Executive</option>
+                                    <option value="Human Resources">Human Resources</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="regPass">Password *</label>
+                                <input type="password" id="regPass" placeholder="••••••••" required minlength="4">
+                            </div>
+                            <div class="form-group">
+                                <label for="regPhone">Phone Number</label>
+                                <input type="tel" id="regPhone" placeholder="9876501234">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Register Account</button>
+                        <p class="auth-helper">Have an account? <a href="#login" onclick="showView('login')">Sign In</a></p>
+                    </form>
+                    <div id="regFeedback" class="feedback-msg"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: DASHBOARD (Condition met) -->
+        <section id="view-dashboard" class="view-panel">
+            <div class="portal-card">
+                <div class="portal-header">
+                    <div>
+                        <h2 id="dashTitle">Role Portal</h2>
+                        <p id="dashRuleNotice" class="rule-notice"></p>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead id="dashTableHead">
+                            <!-- Populated dynamically based on role -->
+                        </thead>
+                        <tbody id="dashTableBody">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Nexora Technologies Pvt. Ltd. | MCA Lab Portfolio Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

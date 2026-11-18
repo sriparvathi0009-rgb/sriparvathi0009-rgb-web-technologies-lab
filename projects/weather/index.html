@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather Application - AJAX & JSON (Lab Exercise 9)</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="icon">⛅</span>
+                <h1>AJAX Weather Portal</h1>
+            </div>
+            <a href="../../projects.html" class="back-link">← Back to Portfolio</a>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Search and AJAX Fetch Control -->
+        <div class="search-card">
+            <h2>Fetch Weather Data via AJAX (JSON API)</h2>
+            <p class="subtitle">Demonstrating asynchronous JavaScript XMLHttpRequest / fetch() retrieving real-time hypothetical API weather payloads.</p>
+
+            <div class="search-row">
+                <div class="input-wrap">
+                    <input type="text" id="cityInput" placeholder="Enter city name (e.g. Puducherry, Kannur, Chennai, Bengaluru, London, Tokyo)..." value="Puducherry">
+                </div>
+                <button id="fetchWeatherBtn" class="btn btn-primary">
+                    <span id="btnText">Get Weather (AJAX)</span>
+                    <span id="loader" class="spinner" style="display:none;"></span>
+                </button>
+            </div>
+
+            <div class="quick-chips">
+                <span>Quick Cities:</span>
+                <button class="chip" onclick="loadCity('Puducherry')">Puducherry</button>
+                <button class="chip" onclick="loadCity('Kannur')">Kannur</button>
+                <button class="chip" onclick="loadCity('Bengaluru')">Bengaluru</button>
+                <button class="chip" onclick="loadCity('Chennai')">Chennai</button>
+                <button class="chip" onclick="loadCity('Tokyo')">Tokyo</button>
+                <button class="chip" onclick="loadCity('London')">London</button>
+            </div>
+        </div>
+
+        <div id="statusArea" class="status-box" style="display:none;"></div>
+
+        <!-- Weather Display Card -->
+        <div id="weatherDisplay" class="weather-card" style="display:none;">
+            <div class="weather-main">
+                <div class="temp-section">
+                    <span id="weatherIcon" class="weather-emoji">⛅</span>
+                    <div>
+                        <div class="temp-val"><span id="tempVal">29.5</span>°C</div>
+                        <div id="weatherDesc" class="weather-desc">Partly Cloudy</div>
+                    </div>
+                </div>
+                <div class="location-section">
+                    <h2 id="cityName">Puducherry</h2>
+                    <p id="countryCode">India (IN)</p>
+                    <span id="lastUpdated" class="timestamp">Fetched via AJAX just now</span>
+                </div>
+            </div>
+
+            <!-- Detailed Grid -->
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-icon">🌡️</span>
+                    <div class="metric-info">
+                        <label>Feels Like</label>
+                        <h4 id="feelsLike">33°C</h4>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-icon">💧</span>
+                    <div class="metric-info">
+                        <label>Humidity</label>
+                        <h4 id="humidity">78%</h4>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-icon">💨</span>
+                    <div class="metric-info">
+                        <label>Wind Speed</label>
+                        <h4 id="windSpeed">4.6 m/s</h4>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-icon">📉</span>
+                    <div class="metric-info">
+                        <label>Pressure</label>
+                        <h4 id="pressure">1011 hPa</h4>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-icon">🍃</span>
+                    <div class="metric-info">
+                        <label>Air Quality</label>
+                        <h4 id="airQuality">Moderate</h4>
+                    </div>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-icon">📊</span>
+                    <div class="metric-info">
+                        <label>Min / Max Temp</label>
+                        <h4 id="tempRange">26°C / 32°C</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-Day Forecast -->
+            <div class="forecast-section">
+                <h3>3-Day Forecast (JSON Parsed Array)</h3>
+                <div id="forecastGrid" class="forecast-grid"></div>
+            </div>
+
+            <!-- Raw JSON Response Accordion -->
+            <div class="raw-json-box">
+                <div class="json-header" onclick="toggleJsonView()">
+                    <span>🔍 View Raw JSON Response (AJAX Payload)</span>
+                    <span id="jsonToggleIcon">▼</span>
+                </div>
+                <pre id="jsonPayload" style="display:none;"><code></code></pre>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 AJAX Weather Application | Pondicherry University MCA Lab</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

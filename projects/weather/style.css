@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #1e293b;
+    padding: 18px 5%;
+    border-bottom: 1px solid #334155;
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo .icon {
+    font-size: 28px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+.back-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.back-link:hover {
+    color: #38bdf8;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+}
+
+.search-card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #334155;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.search-card h2 {
+    font-size: 22px;
+    color: #f8fafc;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.search-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.input-wrap {
+    flex: 1;
+    min-width: 250px;
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    background: #0f172a;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-wrap input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #0284c7;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0369a1;
+}
+
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.quick-chips {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.chip {
+    background: #334155;
+    color: #e2e8f0;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chip:hover {
+    background: #0284c7;
+    color: white;
+}
+
+.status-box {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.status-box.error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid #ef4444;
+    color: #fca5a5;
+}
+
+/* Weather Result Card */
+.weather-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 16px;
+    border: 1px solid #334155;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.weather-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 25px;
+}
+
+.temp-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.weather-emoji {
+    font-size: 64px;
+}
+
+.temp-val {
+    font-size: 54px;
+    font-weight: 700;
+    color: #38bdf8;
+    line-height: 1;
+}
+
+.weather-desc {
+    font-size: 16px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.location-section {
+    text-align: right;
+}
+
+.location-section h2 {
+    font-size: 32px;
+    color: #f8fafc;
+}
+
+.location-section p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.timestamp {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.metric-item {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.metric-icon {
+    font-size: 24px;
+}
+
+.metric-info label {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+}
+
+.metric-info h4 {
+    font-size: 15px;
+    color: #f8fafc;
+    margin-top: 2px;
+}
+
+/* Forecast */
+.forecast-section {
+    margin-top: 25px;
+}
+
+.forecast-section h3 {
+    font-size: 16px;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+}
+
+.forecast-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.forecast-card .f-day {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.forecast-card .f-icon {
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.forecast-card .f-temp {
+    font-size: 18px;
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+.forecast-card .f-cond {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Raw JSON Payload Viewer */
+.raw-json-box {
+    margin-top: 30px;
+    background: #0b1120;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.json-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+}
+
+.raw-json-box pre {
+    padding: 16px;
+    font-size: 12px;
+    color: #38bdf8;
+    overflow-x: auto;
+    line-height: 1.5;
+}
+
+footer {
+    background: #1e293b;
+    padding: 18px;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    border-top: 1px solid #334155;
+    margin-top: auto;
+}
